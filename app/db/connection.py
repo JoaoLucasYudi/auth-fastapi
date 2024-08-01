@@ -12,8 +12,7 @@ DB = os.getenv('DB_URL')
 
 engine = create_engine(
     DB , # type: ignore
-    pool_pre_ping=True,
-    connect_args={"check_same_thread": False}
+    pool_pre_ping=True
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
